@@ -7,9 +7,55 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---------- Reveal everything below the hero ----------
+     The page-below wrapper (Get to Know Me, About, Projects,
+     Skills, Contact) starts hidden. Clicking the arrow reveals
+     it with a fade, scrolls to it, then the arrow fades away
+     since its job is done. */
+  const scrollArrow = document.getElementById('scrollArrow');
+  const pageBelow = document.getElementById('pageBelow');
+
+  if (scrollArrow && pageBelow) {
+    scrollArrow.addEventListener('click', () => {
+      pageBelow.classList.add('visible');
+
+      // Force a reflow so the fade-in transition actually plays
+      // rather than jumping straight to opacity: 1.
+      void pageBelow.offsetHeight;
+      pageBelow.classList.add('fade-in');
+
+      scrollArrow.classList.add('dismissed');
+      scrollArrow.setAttribute('aria-expanded', 'true');
+
+      setTimeout(() => {
+        pageBelow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    });
+  }
+
   /* ---------- Mobile nav toggle ---------- */
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.querySelector('.nav-links');
+
+  // If someone clicks a nav link (About/Projects/Skills/Contact)
+  // before the reveal arrow has been used, reveal the hidden
+  // content first so the jump actually lands somewhere visible.
+  if (pageBelow && !pageBelow.classList.contains('visible')) {
+    navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!pageBelow.classList.contains('visible')) {
+          pageBelow.classList.add('visible');
+          void pageBelow.offsetHeight;
+          pageBelow.classList.add('fade-in');
+          if (scrollArrow) {
+            scrollArrow.classList.add('dismissed');
+            scrollArrow.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
+    });
+  }
+
 
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('open');

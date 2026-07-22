@@ -44,42 +44,79 @@
        2. HERO
        Keep this simple: photo, name, roles, one short line.
        ============================================================ -->
+
   <section class="hero">
-    <div class="hero-inner">
 
-      <!--
-        REPLACE THIS WITH YOUR PHOTO
-        Swap the src below for your own image (a portrait-ish photo
-        works well here, roughly 500x600px or larger). Keep the same
-        file name or update the src path. If you don't have a photo
-        ready yet, this box will just show a soft placeholder color
-        until you do.
-      -->
-      <div class="hero-photo">
-        <img src="camille.png" alt="Photo of Camille Obedoza" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo');">
-      </div>
+    <div class="hero-top-band">
+      <div class="hero-inner">
+        <div class="hero-photo">
+          <img src="camille.png" alt="Photo of Camille Obedoza" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo');">
+        </div>
 
-      <div class="hero-text">
-        <!-- EDIT NAME HERE -->
+        <div class="hero-text">
         <h1 class="hero-name">Camille Obedoza</h1>
-
-        <!-- EDIT YOUR ROLES/TITLES HERE -->
         <p class="hero-roles">Data Analyst&nbsp;·&nbsp;Business Intelligence&nbsp;·&nbsp;Supply Chain &amp; Operations</p>
-
-        <!-- EDIT YOUR ONE-LINE STATEMENT HERE -->
         <p class="hero-statement">Turning data into better business decisions.</p>
       </div>
+      </div>
 
+      <button class="scroll-arrow" id="scrollArrow" aria-expanded="false" aria-controls="pageBelow" aria-label="Show more of this page">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
     </div>
+
   </section>
+
+  
 
   <!-- ============================================================
        3. ABOUT
        ============================================================ -->
+
+  <!-- Everything below the top band starts hidden. Clicking the
+       down arrow reveals this whole wrapper (Get to Know Me,
+       About, Projects, Skills, Contact) and scrolls to it. -->
+  <div class="page-below" id="pageBelow">
+
+    <div class="hero-videos-band" id="getToKnowBand">
+      <div class="hero-videos">
+
+        <h2 class="video-section-title">Get to Know Me</h2>
+
+        <div class="video-grid">
+
+            <div class="hero-video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/YOUR_INTRO_VIDEO_ID"
+                    title="Introduction Video"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>Introduction Video</h3>
+            </div>
+
+            <div class="hero-video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/YOUR_HIRE_ME_VIDEO_ID"
+                    title="Why Hire Me"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>Why You Should Hire Me</h3>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
   <section class="about" id="about">
     <div class="section-inner">
       <p class="eyebrow">About</p>
 
+      
       <!--
         EDIT ABOUT TEXT HERE
         Write this like you're telling someone your story, not
@@ -227,6 +264,47 @@
       </div>
     </div>
   </section>
+
+  <!-- ...existing code... -->
+
+<section class="videos" id="videos">
+  <div class="section-inner">
+    <p class="eyebrow">More videos</p>
+    <h2 class="section-title">Other work and class project edits</h2>
+
+    <div class="video-grid">
+      <article class="video-card">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_CLASS_PROJECT_1"
+            title="Class project video 1"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <h3>Class project edit</h3>
+        <p>One of the videos I edited for a class project.</p>
+      </article>
+
+      <article class="video-card">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_CLASS_PROJECT_2"
+            title="Class project video 2"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <h3>Another class project</h3>
+        <p>More edited work from my coursework.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ...existing code... -->
   <!-- ============================================================
        5. SKILLS
        ============================================================ -->
@@ -321,6 +399,9 @@
       </div>
     </div>
   </section>
+
+  </div>
+  <!-- /.page-below -->
 
 </main>
 

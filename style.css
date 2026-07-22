@@ -118,7 +118,14 @@ button{ font-family: inherit; }
 
 /* ---------- 2. HERO ---------- */
 .hero{
-  padding: 96px 0 88px;
+  background: var(--paper);
+}
+
+/* Top band: photo + name, its own tint */
+.hero-top-band{
+  position: relative;
+  padding: 96px 0 96px;
+  background: var(--accent-soft);
 }
 .hero-inner{
   max-width: var(--container);
@@ -128,6 +135,63 @@ button{ font-family: inherit; }
   align-items: center;
   gap: 56px;
 }
+
+/* Down arrow: reveals everything below the hero on click */
+.scroll-arrow{
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease), opacity 0.3s var(--ease);
+  animation: arrow-bounce 2.2s ease-in-out infinite;
+}
+.scroll-arrow:hover{
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.scroll-arrow.dismissed{
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+@keyframes arrow-bounce{
+  0%, 100%{ transform: translateX(-50%) translateY(0); }
+  50%{ transform: translateX(-50%) translateY(6px); }
+}
+
+/* Everything below the hero top band: hidden until the arrow
+   is clicked, then fades in as one piece. */
+.page-below{
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+.page-below.visible{
+  display: block;
+}
+.page-below.visible.fade-in{
+  opacity: 1;
+}
+
+.hero-videos-band{
+  background: var(--paper);
+}
+.hero-videos{
+  padding: 72px 28px 80px;
+}
+
+
 
 /* Photo placeholder: soft rounded rectangle. Once a real photo loads,
    it fills the box. If the image fails to load, .no-photo shows a
@@ -189,7 +253,7 @@ button{ font-family: inherit; }
 .about-text p:last-child{ margin-bottom: 0; }
 
 /* ---------- 4. PROJECTS (homepage cards) ---------- */
-.projects{ padding: 96px 0; }
+.projects{ padding: 96px 0; background: var(--paper); }
 .project-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -399,12 +463,18 @@ button{ font-family: inherit; }
   .project-gallery{ grid-template-columns: 1fr; }
 }
 
-/* ---------- 5. SKILLS ---------- */
-.skills{
+/* ---------- VIDEOS (other work) ---------- */
+.videos{
   padding: 88px 0;
   background: var(--paper-soft);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+}
+
+/* ---------- 5. SKILLS ---------- */
+.skills{
+  padding: 88px 0;
+  background: var(--paper);
 }
 .skills-grid{
   display: grid;
@@ -424,7 +494,12 @@ button{ font-family: inherit; }
 }
 
 /* ---------- 6. CONTACT ---------- */
-.contact{ padding: 100px 0 96px; text-align: center; }
+.contact{
+  padding: 100px 0 96px;
+  text-align: center;
+  background: var(--paper-soft);
+  border-top: 1px solid var(--line);
+}
 .contact-inner{ max-width: 520px; }
 .contact-line{
   color: var(--ink-soft);
@@ -535,4 +610,26 @@ button{ font-family: inherit; }
   .skills-grid{ grid-template-columns: 1fr; }
   .contact-details{ flex-direction: column; gap: 10px; }
   .footer-inner{ flex-direction: column; gap: 6px; text-align: center; }
+}
+
+.hero-videos{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.hero-video-card iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:12px;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
 }
