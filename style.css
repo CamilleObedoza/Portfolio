@@ -488,6 +488,16 @@ button{ font-family: inherit; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 760px){
+  .nav{
+    background: #ffffff !important;
+  }
+  .nav-inner{
+    background: #ffffff !important;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    padding: 16px 24px;
+  }
+
   .hero-inner{
     flex-direction: column;
     text-align: center;
@@ -503,7 +513,7 @@ button{ font-family: inherit; }
 
   .nav-links{
     position: fixed;
-    top: 61px; left: 0; right: 0; bottom: 0;
+    top: 61px; left: 0; right: 0;
     background: var(--paper);
     flex-direction: column;
     padding: 24px 28px;
