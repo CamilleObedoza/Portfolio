@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL Project — Camille Obedoza</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="../index.html#top" class="nav-name">Camille Obedoza</a>
+    <nav class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="section-inner">
+
+  <a href="../index.html#projects" class="back-link">&larr; Back to all projects</a>
+
+  <section class="project-hero">
+    <p class="eyebrow">Case Study</p>
+    <h1>SQL Project</h1>
+    <p class="project-summary">
+      A set of SQL queries built to answer the same handful of business
+      questions that kept getting asked, so people would stop rebuilding the
+      same query slightly differently every time.
+    </p>
+    <div class="project-tags">
+      <span class="tag">SQL</span>
+      <span class="tag">Relational Databases</span>
+      <span class="tag">Documentation</span>
+    </div>
+  </section>
+
+  <div class="project-body">
+
+    <section class="project-section">
+      <h2>Overview</h2>
+      <p>
+        The same business questions — order counts by region, top categories
+        by revenue, month-over-month growth — kept coming up, and each time
+        someone rebuilt the query from scratch, often slightly differently. I
+        wrote and tested a reusable set of queries, checked the results
+        against known totals to confirm accuracy, and documented the logic
+        behind each one.
+      </p>
+      <p>
+        Testing against known totals actually caught a real problem: a few
+        existing ad-hoc queries were silently double-counting orders because
+        of an unhandled join, which had been quietly inflating past reports.
+      </p>
+    </section>
+
+    <!-- ADD PROJECT IMAGES HERE — replace with your own screenshots -->
+    <section class="project-section">
+      <h2>Screenshots</h2>
+      <div class="project-gallery">
+        <figure>
+          <img src="images/project-image-1.jpg" alt="Query editor screenshot">
+          <figcaption>Sample query with comments</figcaption>
+        </figure>
+        <figure>
+          <img src="images/project-image-2.jpg" alt="Query results output">
+          <figcaption>Query output compared against known totals</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ADD PROJECT VIDEO HERE — delete this section if you don't have one -->
+    <section class="project-section">
+      <h2>Walkthrough video</h2>
+      <div class="project-video">
+        <iframe src="https://www.youtube.com/embed/your-video-id" title="SQL Project walkthrough" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- ADD PROJECT FILES / LINKS HERE -->
+    <section class="project-section">
+      <h2>Files &amp; links</h2>
+      <div class="file-list">
+        <a href="files/sql-project-queries.sql" target="_blank" rel="noopener">
+          <span>Query file</span>
+          <span class="file-type">SQL</span>
+        </a>
+        <a href="files/sql-project-documentation.pdf" target="_blank" rel="noopener">
+          <span>Query documentation</span>
+          <span class="file-type">PDF</span>
+        </a>
+      </div>
+      <br>
+      <a href="#" class="external-link-btn" target="_blank" rel="noopener">
+        View on GitHub &rarr;
+      </a>
+    </section>
+
+  </div>
+
+  <nav class="project-nav-footer">
+    <a href="../index.html#projects">&larr; Back to all projects</a>
+  </nav>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <span>Camille Obedoza</span>
+    <span class="footer-year">© <span id="year"></span></span>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
