@@ -523,15 +523,24 @@ button{ font-family: inherit; }
   transition: all 0.2s var(--ease);
 }
 .btn-primary{
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  color: var(--ink);
 }
-.btn-primary:hover{ background: var(--accent); }
+.btn-primary:hover{ 
+  border-color: var(--accent); 
+  color: var(--accent); 
+}
+
 .btn-outline{
   border: 1px solid var(--line);
   color: var(--ink);
 }
-.btn-outline:hover{ border-color: var(--accent); color: var(--accent); }
+.btn-outline:hover{ 
+  border-color: var(--accent); 
+  color: var(--accent); 
+}
 
 .contact-details{
   display: flex;
@@ -638,4 +647,13 @@ button{ font-family: inherit; }
     width:100%;
     aspect-ratio:16/9;
     border-radius:12px;
+}
+
+.action-row{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  flex-wrap: nowrap;
 }
