@@ -633,3 +633,9 @@ button{ font-family: inherit; }
     grid-template-columns:repeat(2, 1fr);
     gap:24px;
 }
+
+.video-card iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:12px;
+}
